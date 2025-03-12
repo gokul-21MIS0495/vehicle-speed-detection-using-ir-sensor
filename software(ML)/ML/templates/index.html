@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Detection Analysis</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title at the top -->
+        <h1>Peak Time</h1>
+
+        <!-- Form panel for user input -->
+        <form action="/run" method="post">
+            <!-- Day Selection -->
+            <label for="day">Select Day:</label>
+            <select id="day" name="day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+            <br><br>
+
+            <!-- Start Time Selection -->
+            <label for="start_time">Select Start Time:</label>
+            <select id="start_time" name="start_time">
+                {% for i in range(24) %}
+                    <option value="{{ '{:02}:00:00'.format(i) }}">{{ '{:02}:00:00'.format(i) }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- End Time Selection -->
+            <label for="end_time">Select End Time:</label>
+            <select id="end_time" name="end_time">
+                {% for i in range(24) %}
+                    <option value="{{ '{:02}:00:00'.format(i) }}">{{ '{:02}:00:00'.format(i) }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <input type="submit" value="Run Analysis">
+        </form>
+
+        <!-- Display the result of the analysis below the form -->
+        {% if result %}
+            <div class="result">
+                <h2>Analysis Result:</h2>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

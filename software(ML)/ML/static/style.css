@@ -1,0 +1,139 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background and page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffcc00, #333333); /* Yellow to dark grey gradient */
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make sure the page takes the full height of the screen */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Container to center content */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+}
+
+/* Heading styles */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Form styling */
+form {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #f8f8f8;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+/* Submit button with hover effect */
+input[type="submit"] {
+    background-color: #ffcc00; /* Yellow (Traffic Light) */
+    color: black;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #e6b800; /* Darker Yellow when hovered */
+}
+
+/* Display result section */
+.result {
+    margin-top: 30px;
+}
+
+/* Add color shades for traffic signals and police */
+.result h2 {
+    margin-top: 30px;
+    font-size: 24px;
+    color: #ffcc00; /* Yellow color for alerts (similar to traffic light) */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Add green, yellow, and red for traffic-related statuses */
+.result .green-alert {
+    color: #00cc00; /* Green for safe/low speed */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.result .yellow-alert {
+    color: #ffcc00; /* Yellow for caution */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.result .red-alert {
+    color: #ff3300; /* Red for danger/high speed */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* General result text style */
+p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #f8f8f8;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    label, select, input[type="submit"] {
+        font-size: 16px;
+    }
+
+    .result h2 {
+        font-size: 22px;
+    }
+}
