@@ -1,0 +1,156 @@
+/* src/NotificationPage.css */
+
+.notification-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa; /* Light background to match homepage */
+  min-height: 100vh;
+}
+
+/* Header Styles */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Notification Item */
+.notification-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: none; /* Removed box-shadow to merge with homepage */
+  opacity: 0; /* Initial state to be invisible */
+  transition: opacity 1s ease-in-out;
+  animation: fadeIn 5s forwards;
+}
+
+/* Keyframes to handle the fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.notification-item h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.notification-item p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.notification-item small {
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Back Button Styles */
+.back-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1.1em;
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #45a049;
+}
+
+/* Navbar Removal of Box Shadow */
+nav {
+  box-shadow: none; /* Removed the box shadow */
+  background-color: #fff; /* Ensure navbar background matches the homepage */
+}
+
+/* Navbar Links */
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #007bff; /* Highlight links on hover */
+}
+
+/* Add padding and spacing between notifications for small screens */
+@media (max-width: 768px) {
+  .notification-item {
+    padding: 15px;
+  }
+
+  .notification-item h3 {
+    font-size: 1.4em;
+  }
+
+  .notification-item p {
+    font-size: 14px;
+  }
+
+  .back-btn {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further responsive adjustments for very small screens */
+  .notification-page {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .notification-item {
+    padding: 12px;
+  }
+
+  .notification-item h3 {
+    font-size: 1.3em;
+  }
+
+  .notification-item p {
+    font-size: 12px;
+  }
+
+  .back-btn {
+    font-size: 0.9em;
+    padding: 8px 14px;
+    width: auto;
+  }
+}

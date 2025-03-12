@@ -1,0 +1,197 @@
+/* src/PeakTimePage.css */
+
+.peak-time-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: lightgoldenrodyellow;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .peak-time-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .peak-time-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .peak-time-item p {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .peak-time-item small {
+    font-size: 0.9em;
+    color: #888;
+  }
+  
+  .back-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.1em;
+  }
+  
+  .back-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .peak-time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .peak-time-label {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .panel {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+  }
+  
+  .peak-time-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .peak-time-form label {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .date-label, .time-label {
+    flex: 1;
+  }
+  
+  .date-picker,
+  .peak-time-form select,
+  .peak-time-form input[type="time"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .date-picker:hover,
+  .peak-time-form select:hover,
+  .peak-time-form input[type="time"]:hover {
+    background-color: #e9ecef;
+  }
+  
+  .peak-time-form select:focus,
+  .peak-time-form input[type="time"]:focus,
+  .date-picker:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+  
+  .peak-time-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .peak-time-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .result-panel {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .result-panel p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .result-content {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 50px;
+    box-sizing: border-box;
+  }
+  
+  .hour-selector {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hour-selector:hover {
+    background-color: #e9ecef;
+  }
+  
+  .time-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .time-display {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Hide the navigation arrows and month/year dropdowns in the date picker */
+  .react-datepicker__navigation,
+  .react-datepicker__month-dropdown-container,
+  .react-datepicker__year-dropdown-container {
+    display: none;
+  }
+  

@@ -1,0 +1,283 @@
+/* src/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and buttons */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Padding around the navbar */
+  background-color: #f8f8f8; /* Background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  position: sticky; /* Make the navbar stick to the top */
+  top: 0; /* Stick to the top of the page */
+  z-index: 1000; /* High z-index to stay above other content */
+}
+
+.navbar-logo h2 {
+  margin: 0; /* Remove default margin */
+  color: #333; /* Logo color */
+  font-weight: bold; /* Make the logo text bold */
+  font-size: 24px; /* Increase the logo font size */
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+}
+
+.nav-button {
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 24px; /* Icon size */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for effects */
+  color: #555; /* Default icon color */
+}
+
+.nav-button:hover {
+  transform: scale(1.1); /* Slightly enlarge icon on hover */
+  color: #f0ad4e; /* Amber color for hover effect (Caution) */
+}
+
+.logout {
+  color: #d9534f; /* Red color for logout button (Stop) */
+}
+
+.logout:hover {
+  color: #c9302c; /* Darker red for logout button hover effect */
+}
+
+.nav-button:nth-child(1) {
+  color: #5cb85c; /* Green color for the Account button (Go) */
+}
+
+.nav-button:nth-child(1):hover {
+  color: #4cae4c; /* Darker green on hover */
+}
+
+.nav-button:nth-child(2) {
+  color: #f0ad4e; /* Amber color for the Notifications button (Caution) */
+}
+
+.nav-button:nth-child(2):hover {
+  color: #ec971f; /* Darker amber on hover */
+}
+
+/* Notification pop-up panel styling */
+.bell-button {
+  position: relative; /* To position the notification panel relative to the bell icon */
+}
+
+.notification-popup {
+  position: absolute; /* Absolute position relative to the bell button */
+  top: 60px; /* Distance from the top of the bell icon */
+  right: -10px; /* Align slightly to the right of the bell icon */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Elegant gradient background */
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners for the panel */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1); /* Soft and deep shadow */
+  width: 300px; /* Set width of the pop-up */
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Initially transparent */
+  transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  z-index: 9999; /* Ensure it appears above other content */
+  transform: translateY(-20px); /* Panel is initially slightly above */
+}
+
+.bell-button:hover .notification-popup {
+  visibility: visible; /* Make it visible on hover */
+  opacity: 1; /* Full opacity on hover */
+  transform: translateY(0); /* Smoothly bring it into view */
+}
+
+/* Animation for notification panel */
+.notification-popup h3 {
+  font-size: 1.3em; /* Bigger font for the title */
+  color: #333; /* Dark color for the heading */
+  font-weight: bold; /* Make the heading bold */
+  margin-bottom: 15px;
+}
+
+.notification-popup p {
+  font-size: 1em;
+  color: #666; /* Slightly lighter color for the paragraph */
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-style: italic; /* Add a touch of style to the text */
+}
+
+.view-btn {
+  background-color: #f0ad4e; /* Button color */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  font-weight: bold; /* Make button text bold */
+  font-size: 1em;
+}
+
+.view-btn:hover {
+  background-color: #ec971f; /* Darker color on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Subtle glow effect for button */
+.view-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(240, 173, 78, 0.7); /* Glowing effect */
+}
+/* src/Navbar.css */
+.notification-popup {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px; /* Smaller width */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1000;
+  font-size: 14px; /* Smaller text for elegance */
+}
+
+.bell-button:hover .notification-popup {
+  display: block; /* Show popup on hover */
+}
+
+.notification-item {
+  margin-bottom: 8px; /* Reduced margin for compactness */
+}
+
+.notification-item p {
+  margin: 3px 0; /* Tighter spacing */
+  color: #333; /* Darker text for readability */
+  font-weight: 500; /* Slightly bold text for emphasis */
+}
+
+.view-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px; /* Smaller padding for a compact button */
+  cursor: pointer;
+  margin-top: 8px;
+  width: 100%;
+  font-size: 14px; /* Smaller text for elegance */
+  text-align: center;
+}
+
+.view-btn:hover {
+  background-color: #45a049;
+}
+
+/* Bell button hover effect */
+.bell-button {
+  position: relative;
+}
+/* Notification Popup */
+.notification-popup {
+  position: absolute;
+  top: 50px; /* Adjusted for spacing from the navbar */
+  right: 20px;
+  width: 320px; /* Wider panel */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden; /* Hidden by default */
+}
+
+.notification-popup.show {
+  opacity: 1;
+  visibility: visible; /* Show the popup */
+}
+
+.notification-popup h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.notification-popup p {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+}
+
+.notification-popup .view-btn {
+  margin-top: 15px;
+  background-color: #f0ad4e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.notification-popup .view-btn:hover {
+  background-color: #ec971f;
+}
+
+/* Styling for the icon button */
+.bell-button {
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+}
+
+.bell-button:hover .notification-popup {
+  opacity: 1;
+  visibility: visible; /* Show the popup on hover */
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  margin-right: 8px; /* Adjust spacing as needed */
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-image {
+  width: 20px; /* Adjust size as needed */
+  margin-right: 5px;
+}
+
+.nav-button {
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0; /* Optional hover effect */
+}
+.nav-button.peak-time-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  /* Additional styles for hover, active, etc. can be added */
+}
+
+.nav-button.peak-time-button:hover {
+  color: #007bff; /* Example hover color */
+}

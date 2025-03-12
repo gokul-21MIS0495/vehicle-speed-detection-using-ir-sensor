@@ -1,0 +1,124 @@
+/* Container for the homepage */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Main title styling */
+h1 {
+  color: #333;
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Cards container */
+.street-cards {
+  display: flex;
+  justify-content: space-between; /* Ensure there's space between the cards */
+  width: 100%;
+  max-width: 1000px;
+  gap: 30px;
+  padding: 0 20px; /* Added padding for more spacious layout */
+  flex-wrap: nowrap; /* Ensure cards are always in a row */
+}
+
+/* Individual card styling */
+.street-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 30%; /* About a third of the container's width */
+  min-width: 280px; /* Prevent cards from shrinking too much */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.street-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card title styling */
+.street-card h2 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Card text styling */
+.street-card p {
+  font-size: 1em;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Circular progress bar */
+.circular-progressbar {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.details-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+  background-color: #388e3c;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .street-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .street-card {
+    width: 100%;
+    max-width: 90%; /* Full width on small screens */
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet view adjustments for medium-sized screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .street-card {
+    width: 45%; /* Two columns on tablets */
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1025px) {
+  .street-card {
+    width: 30%; /* Three columns on large screens */
+  }
+}
+
+/* Additional spacing and alignment */
+.street-cards {
+  gap: 30px; /* Gap between the cards */
+  padding: 0 20px;
+}
