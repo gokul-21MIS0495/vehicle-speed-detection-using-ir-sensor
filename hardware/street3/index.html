@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Vehicle Monitor</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>Live Vehicle Speed Detection Monitor</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Speed (km/h)</th>
+        <th>Opposite Direction</th>
+      </tr>
+    </thead>
+    <tbody id="vehicleData">
+      <!-- Real-time data will be inserted here -->
+    </tbody>
+  </table>
+
+  <!-- Include Socket.io -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Listen for new data from the server
+    socket.on('newVehicleData', data => {
+      const tableBody = document.getElementById('vehicleData');
+      
+      // Create a new row for the incoming data
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${data.date}</td>
+        <td>${data.time}</td>
+        <td>${data.speed_kmph.toFixed(1)}</td>
+        <td>${data.opposite_direction ? 'Yes' : 'No'}</td>
+      `;
+      
+      // Prepend the new row to the table
+      tableBody.insertBefore(row, tableBody.firstChild);
+    });
+  </script>
+</body>
+</html>
